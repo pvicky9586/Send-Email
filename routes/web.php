@@ -18,17 +18,15 @@ use App\Http\Controllers\Emails;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', function(){
-	return view('seend');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 
-
-
-
+//ENVIADO X GET DESDE LA ROUTE
+Route::get('/xget', function(){
+	return view('seend');
+});
 Route::get('/enviado', function(Request $request){
 	$data = array(
         'name'      =>  $request->input('name'),
@@ -44,12 +42,6 @@ Route::get('/enviado', function(Request $request){
 
 
 
-
-
-
-// ruta de formulario
-// Route::get('/form', 'Emails@index');
-
-Route::get('/form', [Emails::class, 'index']);
-// // ruta al enviar correo
+//ENVIO X POST- USANDO controlador
+Route::get('/xpost', [Emails::class, 'index']);
 Route::post('/send', [Emails::class,'send']);

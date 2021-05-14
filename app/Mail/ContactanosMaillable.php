@@ -11,7 +11,7 @@ class ContactanosMaillable extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = "Cursos Online ";
+    public $subject = "Send msjs";
     public $data;
 
     /**
